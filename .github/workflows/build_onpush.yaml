@@ -1,4 +1,4 @@
-name: Subsonic Docker Build
+name: Subsonic Docker build on push
 
 on:
    push:
