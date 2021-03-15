@@ -6,8 +6,7 @@ SUBSONIC_PORT=4040
 fi
 
 if wget --quiet --spider --no-check-certificate "https://localhost:${SUBSONIC_HTTPS_PORT}" || wget --quiet --spider "http://localhost:${SUBSONIC_PORT}"; then
-echo "Container is healthy"
+exit 0
 else
-echo "Caught error, please restart container"
 exit 1
 fi
