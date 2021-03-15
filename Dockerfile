@@ -18,7 +18,7 @@ RUN apk update --no-cache && apk upgrade -a --no-cache && apk --update --no-cach
 && sed -i '/subsonic-booter-jar-with-dependencies.jar/c\  -jar subsonic-booter-jar-with-dependencies.jar' /opt/subsonic/subsonic.sh
 
 HEALTHCHECK --interval=120s --timeout=15s --start-period=120s --retries=2 \
-            CMD /opt/subsonic/healthcheck && echo "Container Healthy" || exit 1
+            CMD /bin/sh /opt/subsonic/healthcheck && echo "Container Healthy" || exit 1
 
 USER subsonic
 
